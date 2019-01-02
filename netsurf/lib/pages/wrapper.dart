@@ -3,6 +3,7 @@ import 'package:netsurf/pages/ewallet.dart';
 import 'package:netsurf/pages/home.dart';
 
 class WrapperScreen extends StatefulWidget {
+  @override
   _WrapperScreenState createState() => new _WrapperScreenState();
 }
 
@@ -16,6 +17,7 @@ class _WrapperScreenState extends State<WrapperScreen>
     _tabController = new TabController(initialIndex: 0, length: 2, vsync: this);
   }
 
+  @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(

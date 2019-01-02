@@ -6,6 +6,10 @@ class CheckScreen extends StatefulWidget {
 
 class _CheckScreenState extends State<CheckScreen> {
   Widget build(BuildContext context){
-    return new Scaffold();
+    return new Scaffold(
+      body: Center(
+        child: Text('Data Balance'),
+      ),
+    );
   }
 }

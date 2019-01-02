@@ -6,6 +6,10 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context){
-    return new Scaffold();
+    return new Scaffold(
+      body: Center(
+        child: Text('Profile'),
+      ),
+    );
   }
 }

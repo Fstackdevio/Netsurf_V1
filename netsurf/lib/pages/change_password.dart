@@ -6,6 +6,10 @@ class ChangeScreen extends StatefulWidget {
 
 class _ChangeScreenState extends State<ChangeScreen> {
   Widget build(BuildContext context){
-    return new Scaffold();
+    return new Scaffold(
+      body: Center(
+        child: Text('Change Password'),
+      ),
+    );
   }
 }

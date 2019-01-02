@@ -6,6 +6,10 @@ class LoginHistoryScreen extends StatefulWidget {
 
 class _LoginHistoryScreenState extends State<LoginHistoryScreen> {
   Widget build(BuildContext context){
-    return new Scaffold();
+    return new Scaffold(
+      body: Center(
+        child: Text('Login History'),
+      ),
+    );
   }
 }

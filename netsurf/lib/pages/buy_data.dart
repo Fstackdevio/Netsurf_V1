@@ -6,6 +6,10 @@ class BuyScreen extends StatefulWidget {
 
 class _BuyScreenState extends State<BuyScreen> {
   Widget build(BuildContext context){
-    return new Scaffold();
+    return new Scaffold(
+      body: Center(
+        child: Text('Buy Data'),
+      ),
+    );
   }
 }
