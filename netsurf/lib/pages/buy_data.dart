@@ -7,7 +7,7 @@ class BuyScreen extends StatefulWidget {
 
 class _BuyScreenState extends State<BuyScreen> {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         elevation: 0.0,
@@ -81,11 +81,10 @@ class _BuyScreenState extends State<BuyScreen> {
                     padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                     child: new Center(
                         child: new RaisedButton(
-                      child: const Text("purchase"),
-                      elevation: 4.0,
-                      onPressed: () => null,
-                      splashColor: Colors.green
-                    )),
+                            child: const Text("purchase"),
+                            elevation: 4.0,
+                            onPressed: () => null,
+                            splashColor: Colors.green)),
                   )
                 ],
               ),

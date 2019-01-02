@@ -62,11 +62,10 @@ class _CheckScreenState extends State<CheckScreen> {
                     padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                     child: new Center(
                         child: new RaisedButton(
-                      child: const Text("check"),
-                      elevation: 4.0,
-                      onPressed: () => null,
-                      splashColor: Colors.green
-                    )),
+                            child: const Text("check"),
+                            elevation: 4.0,
+                            onPressed: () => null,
+                            splashColor: Colors.green)),
                   )
                 ],
               ),
