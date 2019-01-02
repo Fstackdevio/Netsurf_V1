@@ -6,6 +6,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context){
-    return new Scaffold();
+    return new Scaffold(
+      body: new Center(
+        child: new Text('Home View'),
+      ),
+    );
   }
 }

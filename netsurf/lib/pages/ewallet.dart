@@ -6,6 +6,10 @@ class EwalletScreen extends StatefulWidget {
 
 class _EwalletScreenState extends State<EwalletScreen> {
   Widget build(BuildContext context){
-    return new Scaffold();
+    return new Scaffold(
+      body: new Center(
+        child: new Text('E-Wallet View'),
+      ),
+    );
   }
 }
