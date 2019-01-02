@@ -230,7 +230,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         backgroundColor: Colors.white,
                         radius: 60.0,
                         child: new Icon(
-                          Icons.person,
+                          Icons.vpn_lock,
                           size: 50.0,
                           color: Colors.greenAccent,
                         ),
