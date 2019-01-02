@@ -50,6 +50,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
+                  new SizedBox(
+                    height: 10.0,
+                  ),
                   new Text('Profile')
                 ],
               ),
@@ -79,6 +82,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
+                  new SizedBox(
+                    height: 10.0,
+                  ),
                   new Text('Data Balance')
                 ],
               ),
@@ -101,12 +107,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         backgroundColor: Colors.white,
                         radius: 60.0,
                         child: new Icon(
-                          Icons.shopping_cart,
+                          Icons.shopping_basket,
                           size: 50.0,
                           color: Colors.greenAccent,
                         ),
                       ),
                     ),
+                  ),
+                  new SizedBox(
+                    height: 10.0,
                   ),
                   new Text('Buy Data')
                 ],
@@ -145,6 +154,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
+                  new SizedBox(
+                    height: 10.0,
+                  ),
                   new Text('Share Data')
                 ],
               ),
@@ -174,6 +186,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
+                  new SizedBox(
+                    height: 10.0,
+                  ),
                   new Text('Change Password')
                 ],
               ),
@@ -199,6 +214,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             size: 50.0, color: Colors.greenAccent),
                       ),
                     ),
+                  ),
+                  new SizedBox(
+                    height: 10.0,
                   ),
                   new Text('Settings')
                 ],
@@ -236,6 +254,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
+                  ),
+                  new SizedBox(
+                    height: 10.0,
                   ),
                   new Text('Login History')
                 ],
