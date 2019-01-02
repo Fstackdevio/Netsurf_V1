@@ -7,6 +7,12 @@ class LoginHistoryScreen extends StatefulWidget {
 class _LoginHistoryScreenState extends State<LoginHistoryScreen> {
   Widget build(BuildContext context){
     return new Scaffold(
+      appBar: new AppBar(
+        elevation: 0.0,
+        backgroundColor: Colors.green,
+        title: new Text('Login History'),
+        centerTitle: true,
+      ),
       body: Center(
         child: Text('Login History'),
       ),

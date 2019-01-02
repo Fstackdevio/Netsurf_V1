@@ -7,6 +7,12 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context){
     return new Scaffold(
+      appBar: new AppBar(
+        elevation: 0.0,
+        backgroundColor: Colors.green,
+        title: new Text('Settings'),
+        centerTitle: true,
+      ),
       body: Center(
         child: Text('Settings'),
       ),

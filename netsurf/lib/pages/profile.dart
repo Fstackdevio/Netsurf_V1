@@ -7,6 +7,12 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context){
     return new Scaffold(
+      appBar: new AppBar(
+        elevation: 0.0,
+        backgroundColor: Colors.green,
+        title: new Text('Profile'),
+        centerTitle: true,
+      ),
       body: Center(
         child: Text('Profile'),
       ),
