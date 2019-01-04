@@ -29,7 +29,7 @@ class _HistoryCardState extends State<HistoryCard> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         new Icon(
-                          Icons.timer,
+                          Icons.access_time,
                           color: Colors.blue,
                         ),
                         new Text(data[index].timeStamp)
