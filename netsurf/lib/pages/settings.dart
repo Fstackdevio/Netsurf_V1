@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netsurf/pages/faq.dart';
 import 'package:netsurf/pages/login.dart';
 import 'package:netsurf/pages/share_history.dart';
 
@@ -201,7 +202,10 @@ class _BottomSettingsState extends State<BottomSettings> {
                   ),
                 ),
                 new InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => FaqScreen()));
+                  },
                   child: Container(
                     height: 200.0,
                     width: 200.0,
