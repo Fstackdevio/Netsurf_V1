@@ -28,7 +28,7 @@ class TopFaq extends StatelessWidget {
       height: 100.0,
       child: new Center(
         child: new Text(
-          'Most Frequent Asked Questions',
+          'Most Frequently Asked Questions',
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blueGrey),
         ),
       ),
