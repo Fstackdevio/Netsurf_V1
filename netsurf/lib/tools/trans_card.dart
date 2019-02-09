@@ -30,7 +30,7 @@ class _HistoryCardState extends State<HistoryCard> {
                       children: <Widget>[
                         new Icon(
                           Icons.access_time,
-                          color: Colors.blue,
+                          color: Colors.blueGrey,
                         ),
                         new Text(data[index].timeStamp)
                       ],
@@ -45,11 +45,12 @@ class _HistoryCardState extends State<HistoryCard> {
                       children: <Widget>[
                         new Text(data[index].location,
                             style: TextStyle(
+                              fontSize: 10.0,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.blueGrey)),
                         new Icon(
                           Icons.place,
-                          color: Colors.blue,
+                          color: Colors.lightGreen,
                         )
                       ],
                     ),

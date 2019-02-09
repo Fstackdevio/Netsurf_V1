@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:netsurf/pages/faq.dart';
 import 'package:netsurf/pages/login.dart';
 import 'package:netsurf/pages/share_history.dart';
+import 'package:netsurf/pages/updates.dart';
 
 class SettingsScreen extends StatefulWidget {
   @override
@@ -20,7 +21,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
         body: SingleChildScrollView(
           child: new Column(
-            children: <Widget>[TopSettings(), BottomSettings()],
+            children: <Widget>[
+              TopSettings(),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: BottomSettings(),
+              )
+            ],
           ),
         ));
   }
@@ -37,25 +44,21 @@ class TopSettings extends StatelessWidget {
           child: new Center(
             child: new Padding(
               padding: const EdgeInsets.all(10.0),
-              child: new Material(
-                elevation: 3.0,
-                borderRadius: BorderRadius.circular(100.0),
-                child: new Container(
-                  child: new CircleAvatar(
-                    backgroundColor: Colors.white,
-                    radius: 100.0,
-                    child: new Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        new Icon(
-                          Icons.info,
-                          color: Colors.green,
-                          size: 60.0,
-                        ),
-                        new SizedBox(height: 10.0),
-                        new Text('V 1.0.0')
-                      ],
-                    ),
+              child: new Container(
+                child: new CircleAvatar(
+                  backgroundColor: Colors.white,
+                  radius: 100.0,
+                  child: new Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      new Icon(
+                        Icons.info,
+                        color: Colors.green,
+                        size: 60.0,
+                      ),
+                      new SizedBox(height: 10.0),
+                      new Text('V 1.0.0')
+                    ],
                   ),
                 ),
               ),
@@ -76,198 +79,213 @@ class _BottomSettingsState extends State<BottomSettings> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Padding(
-        padding: EdgeInsets.all(20.0),
-        child: new Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            new SizedBox(
-              height: 50.0,
-            ),
-            new Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                new InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 200.0,
-                    width: 200.0,
-                    decoration: BoxDecoration(color: Colors.grey),
+      child: new Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              new InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => UpdateScreen()));
+                },
+                child: Container(
+                  width: 110.0,
+                  decoration: BoxDecoration(
+                      color: Colors.grey, shape: BoxShape.rectangle),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: new Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         new Icon(
                           Icons.cloud_done,
                           color: Colors.white,
-                          size: 100.0,
+                          size: 80.0,
                         ),
                         new SizedBox(height: 10.0),
-                        new Text('Check For Updates')
+                        new Text('App Updates')
                       ],
                     ),
                   ),
                 ),
-                new InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ShareHistoryScreen()));
-                  },
-                  child: Container(
-                    height: 200.0,
-                    width: 200.0,
-                    decoration: BoxDecoration(color: Colors.grey),
+              ),
+              new InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => ShareHistoryScreen()));
+                },
+                child: Container(
+                  width: 110.0,
+                  decoration: BoxDecoration(
+                      color: Colors.grey, shape: BoxShape.rectangle),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: new Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         new Icon(
                           Icons.swap_vertical_circle,
                           color: Colors.white,
-                          size: 100.0,
+                          size: 80.0,
                         ),
                         new SizedBox(height: 10.0),
-                        new Text('Data Share History')
+                        new Text('Share History')
                       ],
                     ),
                   ),
                 ),
-                new InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 200.0,
-                    width: 200.0,
-                    decoration: BoxDecoration(color: Colors.grey),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: new Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          new Icon(
-                            Icons.clear_all,
-                            color: Colors.white,
-                            size: 100.0,
-                          ),
-                          new SizedBox(height: 10.0),
-                          new Text('Clear The Cache')
-                        ],
-                      ),
+              ),
+              new InkWell(
+                onTap: () {},
+                child: Container(
+                  width: 110.0,
+                  decoration: BoxDecoration(
+                      color: Colors.grey, shape: BoxShape.rectangle),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: new Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        new Icon(
+                          Icons.clear_all,
+                          color: Colors.white,
+                          size: 80.0,
+                        ),
+                        new SizedBox(height: 10.0),
+                        new Text('Clear Cache')
+                      ],
                     ),
                   ),
-                )
-              ],
-            ),
-            new SizedBox(
-              height: 50.0,
-            ),
-            new Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                new InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 200.0,
-                    width: 200.0,
-                    decoration: BoxDecoration(color: Colors.grey),
+                ),
+              )
+            ],
+          ),
+          new SizedBox(
+            height: 10.0,
+          ),
+          new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              new InkWell(
+                onTap: () {},
+                child: Container(
+                  width: 110.0,
+                  decoration: BoxDecoration(
+                      color: Colors.grey, shape: BoxShape.rectangle),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: new Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         new Icon(
                           Icons.language,
                           color: Colors.white,
-                          size: 100.0,
+                          size: 80.0,
                         ),
                         new SizedBox(height: 10.0),
-                        new Text('Disconnect Globally')
+                        new Text('Disconnect')
                       ],
                     ),
                   ),
                 ),
-                new InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 200.0,
-                    width: 200.0,
-                    decoration: BoxDecoration(color: Colors.grey),
+              ),
+              new InkWell(
+                onTap: () {},
+                child: Container(
+                  width: 110.0,
+                  decoration: BoxDecoration(
+                      color: Colors.grey, shape: BoxShape.rectangle),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: new Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         new Icon(
                           Icons.notifications,
                           color: Colors.white,
-                          size: 100.0,
+                          size: 80.0,
                         ),
                         new SizedBox(height: 10.0),
-                        new Text('Push Notifications')
+                        new Text('Notifications')
                       ],
                     ),
                   ),
                 ),
-                new InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => FaqScreen()));
-                  },
-                  child: Container(
-                    height: 200.0,
-                    width: 200.0,
-                    decoration: BoxDecoration(color: Colors.grey),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: new Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          new Icon(
-                            Icons.assignment,
-                            color: Colors.white,
-                            size: 100.0,
-                          ),
-                          new SizedBox(height: 10.0),
-                          new Text('FAQs')
-                        ],
-                      ),
+              ),
+              new InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => FaqScreen()));
+                },
+                child: Container(
+                  width: 110.0,
+                  decoration: BoxDecoration(
+                      color: Colors.grey, shape: BoxShape.rectangle),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: new Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        new Icon(
+                          Icons.assignment,
+                          color: Colors.white,
+                          size: 80.0,
+                        ),
+                        new SizedBox(height: 10.0),
+                        new Text('FAQs')
+                      ],
                     ),
                   ),
-                )
-              ],
-            ),
-            new SizedBox(
-              height: 50.0,
-            ),
-            new Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                new InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 200.0,
-                    width: 200.0,
-                    decoration: BoxDecoration(color: Colors.grey),
+                ),
+              )
+            ],
+          ),
+          new SizedBox(
+            height: 10.0,
+          ),
+          new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              new InkWell(
+                onTap: () {},
+                child: Container(
+                  width: 110.0,
+                  decoration: BoxDecoration(
+                      color: Colors.grey, shape: BoxShape.rectangle),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: new Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         new Icon(
                           Icons.bug_report,
                           color: Colors.white,
-                          size: 100.0,
+                          size: 80.0,
                         ),
                         new SizedBox(height: 10.0),
-                        new Text('About The App')
+                        new Text('About App')
                       ],
                     ),
                   ),
                 ),
-                new InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 200.0,
-                    width: 200.0,
-                    decoration: BoxDecoration(color: Colors.grey),
+              ),
+              new InkWell(
+                onTap: () {},
+                child: Container(
+                  width: 110.0,
+                  decoration: BoxDecoration(
+                      color: Colors.grey, shape: BoxShape.rectangle),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: new Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         new Icon(
                           Icons.thumbs_up_down,
                           color: Colors.white,
-                          size: 100.0,
+                          size: 80.0,
                         ),
                         new SizedBox(height: 10.0),
                         new Text('Feedback')
@@ -275,36 +293,36 @@ class _BottomSettingsState extends State<BottomSettings> {
                     ),
                   ),
                 ),
-                new InkWell(
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => LoginScreen()));
-                  },
-                  child: Container(
-                    height: 200.0,
-                    width: 200.0,
-                    decoration: BoxDecoration(color: Colors.grey),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: new Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          new Icon(
-                            Icons.power_settings_new,
-                            color: Colors.white,
-                            size: 100.0,
-                          ),
-                          new SizedBox(height: 10.0),
-                          new Text('Logout')
-                        ],
-                      ),
+              ),
+              new InkWell(
+                onTap: () {
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => LoginScreen()));
+                },
+                child: Container(
+                  width: 110.0,
+                  decoration: BoxDecoration(
+                      color: Colors.grey, shape: BoxShape.rectangle),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: new Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        new Icon(
+                          Icons.power_settings_new,
+                          color: Colors.white,
+                          size: 80.0,
+                        ),
+                        new SizedBox(height: 10.0),
+                        new Text('Logout')
+                      ],
                     ),
                   ),
-                )
-              ],
-            )
-          ],
-        ),
+                ),
+              )
+            ],
+          )
+        ],
       ),
     );
   }

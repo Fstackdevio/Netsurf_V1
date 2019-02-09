@@ -37,5 +37,13 @@ List<LoginHistoryModel> historyData = [
   LoginHistoryModel(
     timeStamp: '17:20 - 17:35',
     location: 'Chapel'
+  ),
+  LoginHistoryModel(
+    timeStamp: '18:20 - 18:35',
+    location: 'Chapel'
+  ),
+  LoginHistoryModel(
+    timeStamp: '19:20 - 19:35',
+    location: 'Engr Building'
   )
 ];

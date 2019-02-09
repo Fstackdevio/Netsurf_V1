@@ -16,37 +16,40 @@ class _FaqScreenState extends State<FaqScreen> {
         title: new Text('FAQ'),
         centerTitle: true,
       ),
-      body: new Column(children: <Widget>[TopFaq(), Divider(), BottomFaq()]),
+      body: new Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: FaqList(),
+      )
     );
   }
 }
 
-class TopFaq extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 100.0,
-      child: new Center(
-        child: new Text(
-          'Most Frequently Asked Questions',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blueGrey),
-        ),
-      ),
-    );
-  }
-}
+// class TopFaq extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       height: 100.0,
+//       child: new Center(
+//         child: new Text(
+//           'Most Frequently Asked Questions',
+//           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blueGrey),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-class BottomFaq extends StatefulWidget {
-  @override
-  _BottomFaqState createState() => new _BottomFaqState();
-}
+// class BottomFaq extends StatefulWidget {
+//   @override
+//   _BottomFaqState createState() => new _BottomFaqState();
+// }
 
-class _BottomFaqState extends State<BottomFaq> {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: FaqList(),
-    );
-  }
-}
+// class _BottomFaqState extends State<BottomFaq> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.all(8.0),
+//       child: FaqList(),
+//     );
+//   }
+// }

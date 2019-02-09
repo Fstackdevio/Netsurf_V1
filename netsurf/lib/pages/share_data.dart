@@ -1,4 +1,9 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:netsurf/api/consumer.dart';
+import 'package:netsurf/models/base/EventObject.dart';
+import 'package:netsurf/tools/constants.dart';
+import 'package:netsurf/tools/ui_tools.dart';
 
 class ShareScreen extends StatefulWidget {
   @override
@@ -6,9 +11,17 @@ class ShareScreen extends StatefulWidget {
 }
 
 class _ShareScreenState extends State<ShareScreen> {
+  TextEditingController ctrlUsername = new TextEditingController();
+  TextEditingController ctrlAmount = new TextEditingController();
+  TextEditingController ctrlPin = new TextEditingController();
+  final scaffoldKey = new GlobalKey<ScaffoldState>();
+  BuildContext context;
+
   @override
   Widget build(BuildContext context) {
+    this.context = context;
     return new Scaffold(
+      key: scaffoldKey,
       appBar: new AppBar(
         elevation: 0.0,
         backgroundColor: Colors.green,
@@ -23,7 +36,7 @@ class _ShareScreenState extends State<ShareScreen> {
             right: 10.0,
           ),
           child: new SizedBox(
-            height: 450.0,
+            height: 500.0,
             width: double.infinity,
             child: new Card(
               child: new Column(
@@ -44,6 +57,7 @@ class _ShareScreenState extends State<ShareScreen> {
                     padding: const EdgeInsets.only(
                         left: 40.0, right: 40.0, top: 40.0, bottom: 10.0),
                     child: new TextField(
+                      controller: ctrlUsername,
                       decoration: InputDecoration(
                           prefixIcon: Icon(Icons.person_outline),
                           hintText: 'john.doe'),
@@ -53,6 +67,16 @@ class _ShareScreenState extends State<ShareScreen> {
                     padding: const EdgeInsets.only(
                         left: 40.0, right: 40.0, top: 10.0, bottom: 10.0),
                     child: new TextField(
+                      controller: ctrlAmount,
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.clear_all), hintText: '100'),
+                    ),
+                  ),
+                  new Padding(
+                    padding: const EdgeInsets.only(
+                        left: 40.0, right: 40.0, top: 10.0, bottom: 10.0),
+                    child: new TextField(
+                      controller: ctrlPin,
                       decoration: InputDecoration(
                           prefixIcon: Icon(Icons.lock_open),
                           hintText: 'secret pin'),
@@ -64,7 +88,9 @@ class _ShareScreenState extends State<ShareScreen> {
                         child: new RaisedButton(
                             child: const Text("share"),
                             elevation: 4.0,
-                            onPressed: () => null,
+                            onPressed: () {
+                              _shareData();
+                            },
                             splashColor: Colors.green)),
                   )
                 ],
@@ -74,5 +100,77 @@ class _ShareScreenState extends State<ShareScreen> {
         )),
       ),
     );
+  }
+
+  _shareData() async {
+    if (ctrlUsername.text.trim().isEmpty &&
+        ctrlAmount.text.trim().isEmpty &&
+        ctrlPin.text.trim().isEmpty) {
+      showSnackBar("All fields are required!", Colors.red[600], scaffoldKey);
+      return;
+    }
+    if (ctrlUsername.text.trim().isEmpty &&
+        ctrlAmount.text.trim().isNotEmpty &&
+        ctrlPin.text.trim().isNotEmpty) {
+      showSnackBar("Username is required", Colors.red[600], scaffoldKey);
+      return;
+    }
+    if (ctrlAmount.text.trim().isNotEmpty &&
+        ctrlAmount.text.trim().isEmpty &&
+        ctrlPin.text.trim().isNotEmpty) {
+      showSnackBar("Data amount is required", Colors.red[600], scaffoldKey);
+      return;
+    }
+    if (ctrlUsername.text.trim().isNotEmpty &&
+        ctrlAmount.text.trim().isNotEmpty &&
+        ctrlPin.text.trim().isEmpty) {
+      showSnackBar("Pin is required", Colors.red[600], scaffoldKey);
+      return;
+    }
+
+    displayProgressDialog(context);
+
+    EventObject eventObject =
+        await shareData(ctrlUsername.text, ctrlAmount.text, ctrlPin.text);
+    switch (eventObject.id) {
+      case EventConstants.SHARE_SUCCESSFUL:
+        {
+          setState(() {
+            ctrlUsername.text = "";
+            ctrlAmount.text = "";
+            ctrlPin.text = "";
+            closeProgressDialog(context);
+            showSnackBar(
+                "Data Sent Successfully", Colors.green[600], scaffoldKey);
+            return;
+          });
+        }
+        break;
+      case EventConstants.SHARE_ERR:
+        {
+          setState(() {
+            ctrlUsername.text = "";
+            ctrlAmount.text = "";
+            ctrlPin.text = "";
+            closeProgressDialog(context);
+            showSnackBar("Data Share Error", Colors.red[600], scaffoldKey);
+            return;
+          });
+        }
+        break;
+      case EventConstants.NO_INTERNET:
+        {
+          setState(() {
+            ctrlUsername.text = "";
+            ctrlAmount.text = "";
+            ctrlPin.text = "";
+            closeProgressDialog(context);
+            showSnackBar(
+                "No Internet Connection", Colors.red[600], scaffoldKey);
+            return;
+          });
+        }
+        break;
+    }
   }
 }

@@ -51,6 +51,18 @@ class BottomLogin extends StatefulWidget {
 }
 
 class _BottomLoginState extends State<BottomLogin> {
+  bool _obscureText = true;
+  Icon _icon = Icon(Icons.visibility_off);
+
+  void _toggle() {
+    setState(() {
+      _obscureText = !_obscureText;
+      if (_obscureText = false) {
+        _icon = Icon(Icons.visibility);
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -71,10 +83,13 @@ class _BottomLoginState extends State<BottomLogin> {
                 padding: const EdgeInsets.only(
                     left: 40.0, right: 40.0, top: 20.0, bottom: 50.0),
                 child: new TextField(
-                  obscureText: true,
+                  obscureText: _obscureText,
                   decoration: InputDecoration(
                       prefixIcon: Icon(Icons.lock_outline),
-                      suffixIcon: Icon(Icons.visibility),
+                      suffixIcon: new IconButton(
+                        icon: _icon,
+                        onPressed: _toggle,
+                      ),
                       hintText: 'Password'),
                 ),
               ),

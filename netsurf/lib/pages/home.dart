@@ -17,10 +17,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return new Scaffold(
       body: new Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          new SizedBox(
-            height: 70.0,
-          ),
           new Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
@@ -34,17 +32,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: new Container(
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(70),
+                          //borderRadius: BorderRadius.circular(70.0),
+                          shape: BoxShape.circle,
                           border: Border.all(
                               color: Colors.greenAccent,
                               style: BorderStyle.solid,
                               width: 3.0)),
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
-                        radius: 60.0,
+                        radius: 50.0,
                         child: new Icon(
                           Icons.person,
-                          size: 50.0,
+                          size: 40.0,
                           color: Colors.greenAccent,
                         ),
                       ),
@@ -66,14 +65,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: new Container(
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(70),
+                          //borderRadius: BorderRadius.circular(70),
+                          shape: BoxShape.circle,
                           border: Border.all(
                               color: Colors.greenAccent,
                               style: BorderStyle.solid,
                               width: 3.0)),
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
-                        radius: 60.0,
+                        radius: 50.0,
                         child: new Icon(
                           Icons.insert_chart,
                           size: 50.0,
@@ -98,14 +98,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: new Container(
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(70),
+                          //borderRadius: BorderRadius.circular(70),
+                          shape: BoxShape.circle,
                           border: Border.all(
                               color: Colors.greenAccent,
                               style: BorderStyle.solid,
                               width: 3.0)),
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
-                        radius: 60.0,
+                        radius: 50.0,
                         child: new Icon(
                           Icons.shopping_basket,
                           size: 50.0,
@@ -122,9 +123,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
-          new SizedBox(
-            height: 90.0,
-          ),
           new Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
@@ -138,14 +136,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: new Container(
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(70),
+                          //borderRadius: BorderRadius.circular(70),
+                          shape: BoxShape.circle,
                           border: Border.all(
                               color: Colors.greenAccent,
                               style: BorderStyle.solid,
                               width: 3.0)),
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
-                        radius: 60.0,
+                        radius: 50.0,
                         child: new Icon(
                           Icons.favorite_border,
                           size: 50.0,
@@ -170,14 +169,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: new Container(
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(70),
+                          //borderRadius: BorderRadius.circular(70),
+                          shape: BoxShape.circle,
                           border: Border.all(
                               color: Colors.greenAccent,
                               style: BorderStyle.solid,
                               width: 3.0)),
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
-                        radius: 60.0,
+                        radius: 50.0,
                         child: new Icon(
                           Icons.lock,
                           size: 50.0,
@@ -202,14 +202,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: new Container(
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(70),
+                          //borderRadius: BorderRadius.circular(70),
+                          shape: BoxShape.circle,
                           border: Border.all(
                               color: Colors.greenAccent,
                               style: BorderStyle.solid,
                               width: 3.0)),
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
-                        radius: 60.0,
+                        radius: 50.0,
                         child: new Icon(Icons.settings,
                             size: 50.0, color: Colors.greenAccent),
                       ),
@@ -222,9 +223,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ],
-          ),
-          new SizedBox(
-            height: 90,
           ),
           new Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -239,14 +237,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: new Container(
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(70),
+                          //borderRadius: BorderRadius.circular(70),
+                          shape: BoxShape.circle,
                           border: Border.all(
                               color: Colors.greenAccent,
                               style: BorderStyle.solid,
                               width: 3.0)),
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
-                        radius: 60.0,
+                        radius: 50.0,
                         child: new Icon(
                           Icons.vpn_lock,
                           size: 50.0,

@@ -4,5 +4,8 @@ class EventObject {
   int id;
   Object object;
 
-  EventObject({this.id: EventConstants.NO_INTERNET, this.object: null});
+  EventObject({
+    this.id: EventConstants.NO_INTERNET,
+    this.object: null,
+  });
 }
